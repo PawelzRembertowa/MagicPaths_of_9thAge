@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kraken.magicpaths.MainActivity">
+
+    <TextView
+        android:paddingTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Magic Paths of 9th Age"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+
+    <Button
+        android:text="Start"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="130dp"
+        android:id="@+id/button_start"
+        android:onClick="Start"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:text="Info"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="54dp"
+        android:id="@+id/button_info"
+        android:onClick="Info"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

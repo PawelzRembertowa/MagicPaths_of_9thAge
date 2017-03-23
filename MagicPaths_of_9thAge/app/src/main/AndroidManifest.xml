@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuSite" />
-        <activity android:name=".AppInfo"></activity>
+        <activity android:name=".AppInfo" />
+        <activity android:name=".MiscastTable" />
+        <activity android:name=".Paths"></activity>
     </application>
 
 </manifest>

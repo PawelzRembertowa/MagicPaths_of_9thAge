@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">MagicPaths</string>
+    <string name="start">Start</string>
+    <string name="quit">Info</string>
+    <string name="info">info</string>
+    
+     <string name="formatted_witch_fire">
+        <b>Witch Fire</b> \n
+        Caster\'s unit suffers a number of hits \n
+        equal to the Miscast Roll. The number \n
+        of hits cannot exceed the total number \n
+        of Wounds in the unit. These hits have \n
+        Strength MDU, Magical Attacks and \n
+        Armour Piercing (1).
+    </string>
+
+    <string name="formatted_amnesia">
+        <b>Amnesia</b> \n
+        Roll a D6: On 4+, the Wizard cannot\n
+        cast the Miscast Spell this game\n
+        anymore.
+    </string>
+
+    <string name="formatted_catastrophic_detonation">
+        <b>Catastrophic Detonation</b> \n
+        Roll a D6: On 4+, the Wizard loses \n
+        a number of Wounds equal to half \n
+        its starting number of Wounds, \n
+        rounding fractions up (no saves \n
+        of any kind allowed). Miscast Spell \n
+        this game anymore.
+    </string>
+
+    <string name="formatted_breachVeil">
+        <b>Breach in the Veil</b> \n
+        Roll a D6: On 4+, the Wizard is \n
+        dead, remove it from the game as a \n
+        casualty (no saves of any kind \n
+        allowed).
+    </string>
+
 </resources>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_miscast_table"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.kraken.magicpaths.MiscastTable">
+
+    <TextView
+        android:text="Overwhelming Power"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"/>
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="When casting a spell and two or more Magic Dice roll a natural '6', immediately roll one of your unused Magic Dice (if you have any) and add this to the Casting Roll. This may exceed the normal limit of max 5 Magic Dice to cast spells. If the spell is not dispelled, the casting Wizard must roll on the Miscast Table."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#263238"/>
+
+
+
+    <TableLayout
+        android:id="@+id/tableLayoutID"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:id="@+id/row1ID"
+            android:gravity="center_horizontal">
+            <TextView
+
+                android:text="Miscast Table"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row2ID"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+
+                android:text="Miscast Roll&#xA;(D3+1)xMDU"
+                android:textStyle="bold"
+                android:id="@+id/textViewRoll"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:text="                  Miscast effect&#xA;       (apply all relevant effects)"
+                android:textStyle="bold"
+                android:paddingLeft="30dp"/>
+        </TableRow>
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:background="#263238"/>
+
+        <TableRow
+            android:paddingTop="5dp"
+            android:id="@+id/row3ID"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            >
+
+            <TextView
+                android:text="Always"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:text="@string/formatted_witch_fire"
+                android:paddingLeft="10dp"
+                />
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="5dp"
+            android:id="@+id/row4ID"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:text="10+"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="@string/formatted_amnesia"
+                android:paddingLeft="10dp"
+                />
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="5dp"
+            android:id="@+id/row5ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:text="15+"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="@string/formatted_catastrophic_detonation"
+                android:paddingLeft="10dp"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="5dp"
+            android:id="@+id/row6ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="20+"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="@string/formatted_breachVeil"
+                android:paddingLeft="10dp"
+                />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#263238"/>
+
+    <TextView
+        android:paddingTop="10dp"
+        android:text="Magic Modifiers"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="#E0E0E0"/>
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:text="Wizard Apprentice, +1&#xA;Wizard Master, +2&#xA;Dispelling Bound Spells, +1&#xA;The sum of modifiers cannot exceed +3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"/>
+
+    <TextView
+        android:paddingTop="10dp"
+        android:text="Bound Spells"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="#E0E0E0"/>
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:text="To successfully cast a Bound Spell, the casting roll must be equal to or higher than the spell's Power Level.&#xA;- No positive casting modifiers can be added to the casting roll&#xA;- The caster of a Bound Spell never suffers from Lost Focus&#xA;- A Bound Spell does not get the casting modifier from an Overwhelming Power&#xA;- Path Attribute is resolved as usual&#xA;- Dispelling Attempts gain a +1 modifier, which may exceed the normal limit of max +3&#xA;&#xA;
+If Overwhelming Power is rolled and the spell is not dispelled:&#xA;- If MDU is 4 or more, the Bound Spell is lost and cannot be used again during the game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"/>
+
+
+</LinearLayout>
+</ScrollView>

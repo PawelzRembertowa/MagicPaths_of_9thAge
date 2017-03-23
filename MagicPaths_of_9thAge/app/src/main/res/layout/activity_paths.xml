@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/scrollViewPaths"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_paths"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.example.kraken.magicpaths.Paths">
+
+    <TextView
+        android:text="Choose the Path..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Alchemy"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_alchemy"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Cosmology"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_cosmology"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Divination"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_divination"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Druidism"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_druidism"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Evocation"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_evocation"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Occultism"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_occultism"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Pyromancy"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_pyromancy"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Shamanism"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_shamanism"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Thaumaturgy"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_thaumaturgy"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="Witchcraft"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_witchcraft" />
+
+
+</LinearLayout>
+</ScrollView>

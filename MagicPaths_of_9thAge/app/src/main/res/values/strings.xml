@@ -39,4 +39,34 @@
         allowed).
     </string>
 
+     <string name="cosmology_duality">
+        <b>Duality:</b> All Cosmology spells are divided into two versions; <b>Cosmos</b> and <b>Chaos</b>. When Casting Cosmology spells, always
+declare which version of the spell you are using.
+Whenever a spell from Cosmology is successfully cast and caster had no Cosmology counter, it gains a counter matching
+that version; a <b>Cosmos</b> counter for <b>Cosmos</b> version, or a <b>Chaos</b> counter for <b>Chaos</b> version.
+Non-Bound Spells from Cosmology have <font color="#802000">{their Casting Values reduced by 2}</font> when cast by a Caster with a Cosmology
+counter matching the version of the Spell that is cast (i.e. Cosmos versions of spells have reduced casting values for
+casters with a <b>Cosmos</b> counter, and vice versa for <b>Chaos</b>). When a Caster attempts to cast a Cosmology spell of a version
+not matching its counter, it immediately loses its Cosmology counters.
+At the end of each of your Magic Phases, replace all your <b>Cosmos</b> counters with <b>Chaos</b> counters, and all <b>Chaos</b> counters
+with <b>Cosmos</b> counters.
+    </string>
+
+    <string name="the_conclave">
+        <b>The Conclave:</b> Spells from Divination gain +3" Range for each other Wizard with non-Bound Spells from Divination,
+within 12" of the Caster. Whenever a Wizard attempting to cast a spell from Divination suffers from Lost Focus, all other
+friendly Wizards with non-Bound Spells from Divination and within 12" of the Caster also suffer from Lost Focus, until the end of the Magic Phase.
+    </string>
+
+    <string name="the_sacrifice">
+        <b>The Sacrifice:</b> When casting a non-Bound Spell from this Path, after rolling Magic Dice but before the opponent rolls
+any Dispel Attempt, the Active Player may choose to inflict X hits on the Caster\'s unit or another friendly unengaged unit
+within 24\". Each unit may only be targeted by this ability once per Magic Phase.
+    X is equal to the number of Ranks in the targeted unit, down to a minimum of 2 and up to a maximum of 5. These hits
+    wound automatically and no save of any kind is allowed against them. The last model in a unit can never be removed as
+    a casualty using this ability (any wound that would reduce its Wound Pool to 0 is discarded).
+    If at least one wound was caused, the spell is cast with the <font color="#802000">amplified</font> version. In that case, use any text marked with <font color="brown">{ }</font>
+    and ignore any <font color="red">red</font> text.
+    </string>
+
 </resources>

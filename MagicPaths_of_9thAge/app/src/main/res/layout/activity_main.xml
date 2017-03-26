@@ -14,7 +14,8 @@
         android:text="Magic Paths of 9th Age"
         android:textSize="30sp"
         android:layout_gravity="center"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:text="Start"
@@ -22,7 +23,7 @@
         android:layout_height="75dp"
         android:layout_marginTop="130dp"
         android:id="@+id/button_start"
-        android:onClick="Start"
+
         android:layout_gravity="center"/>
 
     <Button
@@ -31,7 +32,10 @@
         android:layout_height="75dp"
         android:layout_marginTop="54dp"
         android:id="@+id/button_info"
-        android:onClick="Info"
+
         android:layout_gravity="center"/>
 
 </LinearLayout>
+
+    <!--android:onClick="Start"-->
+    <!--android:onClick="Info"-->

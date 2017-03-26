@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_evocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#546E7A">
+
+
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"/>
+
+        <TextView
+            android:text="Casting&#xA;Value"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
+
+        <TextView
+            android:text="Range"
+            android:textSize="11sp"
+            android:paddingLeft="6dp"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
+
+        <TextView
+            android:text="Type"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:paddingLeft="13dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:text="Duration"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:paddingLeft="13dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"/>
+
+        <TextView
+            android:text="Effect"
+            android:paddingLeft="5dp"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listViewEvocationItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+    <!--tools:context="com.example.kraken.magicapp.magicPaths.Evocation"-->

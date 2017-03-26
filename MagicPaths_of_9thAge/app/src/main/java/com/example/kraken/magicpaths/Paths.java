@@ -6,7 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.kraken.magicpaths.paths_of_magic.Alchemy;
+import com.example.kraken.magicpaths.paths_of_magic.Cosmology;
+import com.example.kraken.magicpaths.paths_of_magic.Divination;
+import com.example.kraken.magicpaths.paths_of_magic.Druidism;
+import com.example.kraken.magicpaths.paths_of_magic.Evocation;
+import com.example.kraken.magicpaths.paths_of_magic.Occultism;
+import com.example.kraken.magicpaths.paths_of_magic.Pyromancy;
+import com.example.kraken.magicpaths.paths_of_magic.Shamanism;
+import com.example.kraken.magicpaths.paths_of_magic.Thaumaturgy;
+import com.example.kraken.magicpaths.paths_of_magic.Witchcraft;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class Paths extends AppCompatActivity {
+
+
+
 
     public Button button_alchemy;
     public Button button_cosmology;
@@ -19,123 +37,75 @@ public class Paths extends AppCompatActivity {
     public Button button_thaumaturgy;
     public Button button_witchcraft;
 
-    public void goToAlchemy() {
-        button_alchemy = (Button) findViewById(R.id.button_alchemy);
-        button_alchemy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToAlchemy = new Intent(Paths.this, Alchemy.class);
-                startActivity(stepToAlchemy);
-            }
-        });
+
+
+    @OnClick (R.id.button_alchemy)
+    void onAlchemyButton () {
+        Intent stepToAlchemy = new Intent(this, Alchemy.class);
+        startActivity(stepToAlchemy);
+    }
+
+
+    @OnClick (R.id.button_cosmology)
+    void onCosmologyButton () {
+        Intent stepToCosmology = new Intent(this, Cosmology.class);
+        startActivity(stepToCosmology);
 
     }
 
-    public void goToCosmology() {
-        button_cosmology = (Button) findViewById(R.id.button_cosmology);
-        button_cosmology.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToCosmology = new Intent(Paths.this, Cosmology.class);
-                startActivity(stepToCosmology);
-            }
-        });
+    @OnClick (R.id.button_divination)
+    void onDivinationButton () {
+        Intent stepToDivination = new Intent(this, Divination.class);
+        startActivity(stepToDivination);
 
     }
 
-    public void goToDivination() {
-        button_divination = (Button) findViewById(R.id.button_divination);
-        button_divination.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToDivination = new Intent(Paths.this, Divination.class);
-                startActivity(stepToDivination);
-            }
-        });
+    @OnClick (R.id.button_druidism)
+    void onDruidismButton () {
+        Intent stepToDruidism = new Intent(this, Druidism.class);
+        startActivity(stepToDruidism);
 
     }
 
-    public void goToDruidism() {
-        button_druidism = (Button) findViewById(R.id.button_druidism);
-        button_druidism.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToDruidism = new Intent(Paths.this, Druidism.class);
-                startActivity(stepToDruidism);
-            }
-        });
+    @OnClick (R.id.button_evocation)
+    void onEvocationButton () {
+        Intent stepToEvocation = new Intent(this, Evocation.class);
+        startActivity(stepToEvocation);
 
     }
 
-    public void goToEvocation() {
-        button_evocation = (Button) findViewById(R.id.button_evocation);
-        button_evocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToEvocation = new Intent(Paths.this, Evocation.class);
-                startActivity(stepToEvocation);
-            }
-        });
+    @OnClick (R.id.button_occultism)
+    void onOccultismButton () {
+        Intent stepToOccultism = new Intent(this, Occultism.class);
+        startActivity(stepToOccultism);
 
     }
 
-    public void goToOccultism() {
-        button_occultism = (Button) findViewById(R.id.button_occultism);
-        button_occultism.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToOccultism = new Intent(Paths.this, Occultism.class);
-                startActivity(stepToOccultism);
-            }
-        });
+    @OnClick (R.id.button_pyromancy)
+    void onPyromancyButton () {
+        Intent stepToPyromancy = new Intent(this, Pyromancy.class);
+        startActivity(stepToPyromancy);
 
     }
 
-    public void goToPyromancy() {
-        button_pyromancy = (Button) findViewById(R.id.button_pyromancy);
-        button_pyromancy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToPyromancy = new Intent(Paths.this, Pyromancy.class);
-                startActivity(stepToPyromancy);
-            }
-        });
+    @OnClick (R.id.button_shamanism)
+    void onShamanismButton () {
+        Intent stepToShamanism = new Intent(this, Shamanism.class);
+        startActivity(stepToShamanism);
 
     }
 
-    public void goToShamanism() {
-        button_shamanism = (Button) findViewById(R.id.button_shamanism);
-        button_shamanism.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToShamanism = new Intent(Paths.this, Shamanism.class);
-                startActivity(stepToShamanism);
-            }
-        });
+    @OnClick (R.id.button_thaumaturgy)
+    void onThaumaturgyButton () {
+        Intent stepToThaumaturgy = new Intent(this, Thaumaturgy.class);
+        startActivity(stepToThaumaturgy);
 
     }
 
-    public void goToThaumaturgy() {
-        button_thaumaturgy = (Button) findViewById(R.id.button_thaumaturgy);
-        button_thaumaturgy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToThaumaturgy = new Intent(Paths.this, Thaumaturgy.class);
-                startActivity(stepToThaumaturgy);
-            }
-        });
-
-    }
-
-    public void goToWitchcraft() {
-        button_witchcraft = (Button) findViewById(R.id.button_witchcraft);
-        button_witchcraft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stepToWitchcraft = new Intent(Paths.this, Witchcraft.class);
-                startActivity(stepToWitchcraft);
-            }
-        });
+    @OnClick (R.id.button_witchcraft)
+    void onWitchcraftButton () {
+        Intent stepToWitchcraft = new Intent(this, Witchcraft.class);
+        startActivity(stepToWitchcraft);
 
     }
 
@@ -143,16 +113,8 @@ public class Paths extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paths);
+        ButterKnife.bind(this);
 
-        goToAlchemy();
-        goToCosmology();
-        goToDivination();
-        goToDruidism();
-        goToEvocation();
-        goToOccultism();
-        goToPyromancy();
-        goToShamanism();
-        goToThaumaturgy();
-        goToWitchcraft();
+
     }
 }

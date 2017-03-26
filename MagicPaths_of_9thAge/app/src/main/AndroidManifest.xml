@@ -16,9 +16,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuSite" />
-        <activity android:name=".AppInfo" />
-        <activity android:name=".MiscastTable" />
+        <activity android:name=".AppInfo"
+            android:label="Info"/>
+        <activity android:name=".MiscastTable"
+            android:label="Miscast Table"/>
         <activity android:name=".Paths"></activity>
+        <activity android:name=".paths_of_magic.Alchemy"/>
+        <activity android:name=".paths_of_magic.Druidism"/>
+        <activity android:name=".paths_of_magic.Evocation"/>
+        <activity android:name=".paths_of_magic.Occultism"/>
+        <activity android:name=".paths_of_magic.Pyromancy"/>
+        <activity android:name=".paths_of_magic.Shamanism"/>
+        <activity android:name=".paths_of_magic.Thaumaturgy"/>
+        <activity android:name=".paths_of_magic.Witchcraft"/>
+        <activity android:name=".paths_of_magic.Cosmology"/>
+        <activity android:name=".paths_of_magic.Divination"/>
     </application>
 
 </manifest>

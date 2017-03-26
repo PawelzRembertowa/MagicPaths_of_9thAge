@@ -1,0 +1,215 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shamanism"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kraken.magicapp.magicPaths.Shamanism"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#827717">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"/>
+
+        <TextView
+            android:text="Casting&#xA;Value"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
+
+        <TextView
+            android:text="Range"
+            android:textSize="11sp"
+            android:paddingLeft="6dp"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
+
+        <TextView
+            android:text="Type"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:paddingLeft="13dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:text="Duration"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:paddingLeft="13dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"/>
+
+        <TextView
+            android:text="Effect"
+            android:paddingLeft="5dp"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="675dp">
+
+        <ListView
+            android:id="@+id/listViewShamanismItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_alignBottom="@+id/listViewShamanismItems"
+        android:id="@+id/textTotemicBeast"
+        android:text="Totemic Beast (for Totemic Summon)"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <ImageView
+        android:layout_alignBottom="@+id/textTotemicBeast"
+        android:id="@+id/lineOnTheBot"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#263238"/>
+    <TableLayout
+        android:layout_alignBottom="@+id/lineOnTheBot"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:text="M"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="WS"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="BS"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="S"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="T"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="W"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="I"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="A"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Ld"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingLeft="15dp"
+                android:text="Monstrous Beast"
+                android:textSize="11sp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="3D6"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="3"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="-"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="5"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="5"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="3"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="3"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="4"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="7"
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingLeft="15dp"
+                android:text="Base size 40x40mm"
+                android:textSize="11sp"/>
+        </TableRow>
+
+        <TextView
+            android:text="Special Rules: Random Movement (3D6), Immune to Psychology, Breath Weapon (Strength 3)"
+            android:textSize="11sp"/>
+    </TableLayout>
+</LinearLayout>
+</ScrollView>

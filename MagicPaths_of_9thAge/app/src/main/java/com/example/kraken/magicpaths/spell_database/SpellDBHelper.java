@@ -15,7 +15,7 @@ public class SpellDBHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "magicpaths.db";
 
     //Wersja bazy danych
-    public static int DB_VERSION = 1;
+    public static int DB_VERSION = 2;
 
     public SpellDBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -44,7 +44,7 @@ public class SpellDBHelper extends SQLiteOpenHelper {
             SpellsTableContract.COL_SPELL_COSMOS_DURATION + " TEXT, "+
             SpellsTableContract.COL_SPELL_CHAOS_DURATION + " TEXT, "+
             SpellsTableContract.COL_SPELL_COSMOS_EFFECT + " TEXT, "+
-            SpellsTableContract.COL_SPELL_COSMOS_EFFECT + " TEXT)";
+            SpellsTableContract.COL_SPELL_CHAOS_EFFECT + " TEXT)";
 
     private static String createTableDivination = "CREATE TABLE " + SpellsTableContract.TABLE_DIVINATION + " ( " +
             SpellsTableContract._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+

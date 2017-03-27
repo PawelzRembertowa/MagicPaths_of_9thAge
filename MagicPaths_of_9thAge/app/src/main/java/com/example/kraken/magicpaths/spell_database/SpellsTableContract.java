@@ -12,15 +12,15 @@ public class SpellsTableContract implements BaseColumns{
 
         //Nazwa tablicy
         public static final String TABLE_ALCHEMY = "alchemy_spells";
-        public static final String TABLE_COSMOLOGY = "alchemy_spells";
-        public static final String TABLE_DIVINATION = "alchemy_spells";
-        public static final String TABLE_DRUIDISM = "alchemy_spells";
-        public static final String TABLE_EVOCATION = "alchemy_spells";
-        public static final String TABLE_OCCULTISM = "alchemy_spells";
-        public static final String TABLE_PYROMANCY = "alchemy_spells";
-        public static final String TABLE_SHAMANISM = "alchemy_spells";
-        public static final String TABLE_THAUMATURGY = "alchemy_spells";
-        public static final String TABLE_WITCHCRAFT = "alchemy_spells";
+        public static final String TABLE_COSMOLOGY = "cosmology_spells";
+        public static final String TABLE_DIVINATION = "divination_spells";
+        public static final String TABLE_DRUIDISM = "druidism_spells";
+        public static final String TABLE_EVOCATION = "evocation_spells";
+        public static final String TABLE_OCCULTISM = "occultism_spells";
+        public static final String TABLE_PYROMANCY = "pyromancy_spells";
+        public static final String TABLE_SHAMANISM = "shamanism_spells";
+        public static final String TABLE_THAUMATURGY = "thaumaturgy_spells";
+        public static final String TABLE_WITCHCRAFT = "witchcraft_spells";
 
         //Teraz kolumny
         public static final String COL_SPELL_NUMBER = "number";
@@ -29,7 +29,7 @@ public class SpellsTableContract implements BaseColumns{
         public static final String COL_SPELL_RANGE = "range";
         public static final String COL_SPELL_TYPE = "type";
         public static final String COL_SPELL_DURATION = "duration";
-        public static final String COL_SPELL_EFFECT = "number";
+        public static final String COL_SPELL_EFFECT = "effect";
 
         //kolumna Tabeli Cosmology
 

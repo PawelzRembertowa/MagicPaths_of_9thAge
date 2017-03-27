@@ -2,10 +2,12 @@ package com.example.kraken.magicpaths;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CursorAdapter;
 
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.facebook.stetho.Stetho;
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         alchemyItem.put("COL_SPELL_TYPE", "Hex");
         alchemyItem.put("COL_SPELL_DURATION", "Lasts one Turn");
         alchemyItem.put("COL_SPELL_EFFECT", "The target gains Flammable against Close Combat Attacks and Spells.");
+
+        dbSpells.getAllItemAlchemy();
     }
 
     @OnClick (R.id.button_start)

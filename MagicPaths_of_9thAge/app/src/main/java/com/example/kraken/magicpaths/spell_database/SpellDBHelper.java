@@ -1,6 +1,7 @@
 package com.example.kraken.magicpaths.spell_database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -142,6 +143,21 @@ public class SpellDBHelper extends SQLiteOpenHelper {
         db.execSQL(createTableThaumaturgy);
         db.execSQL(createTableWitchcraft);
 
+    }
+
+    public Cursor getAllItemAlchemy() {
+        Cursor cursorAlchemy = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
+                new String[]
+                        {
+                                SpellsTableContract._ID,
+                                SpellsTableContract.COL_SPELL_NUMBER,
+                                SpellsTableContract.COL_SPELL_NAME,
+                                SpellsTableContract.COL_SPELL_VALUE,
+                                SpellsTableContract.COL_SPELL_RANGE,
+                                SpellsTableContract.COL_SPELL_TYPE,
+                                SpellsTableContract.COL_SPELL_EFFECT
+                        }, null, null, null, null, null);
+        return cursorAlchemy;
     }
 
 

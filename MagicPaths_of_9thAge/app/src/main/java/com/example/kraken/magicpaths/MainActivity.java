@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
+import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 import com.facebook.stetho.Stetho;
 
 import butterknife.ButterKnife;
@@ -39,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         alchemyItem = new ContentValues();
-        alchemyItem.put("number", "A");
-        alchemyItem.put(COL_SPELL_NAME, "Alchemical Fire");
-        alchemyItem.put(COL_SPELL_VALUE, " ");
-        alchemyItem.put(COL_SPELL_RANGE, "18''");
-        alchemyItem.put("COL_SPELL_TYPE", "Hex");
-        alchemyItem.put("COL_SPELL_DURATION", "Lasts one Turn");
-        alchemyItem.put("COL_SPELL_EFFECT", "The target gains Flammable against Close Combat Attacks and Spells.");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_NUMBER, "A");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_NAME, "Alchemical Fire");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_VALUE, " ");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_RANGE, "18''");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_TYPE, "Hex");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_DURATION, "Lasts one Turn");
+        alchemyItem.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains Flammable against Close Combat Attacks and Spells.");
 
         dbSpells.getWritableDatabase().insert("alchemy_spells", null, alchemyItem);
 

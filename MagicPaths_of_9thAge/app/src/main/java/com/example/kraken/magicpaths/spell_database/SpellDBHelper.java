@@ -166,6 +166,15 @@ public class SpellDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //Narazie musi byc cokolwiek, by sie kompilowalo, TU CZEKA NAS ZMIANA
         db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_ALCHEMY);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_COSMOLOGY);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_DIVINATION);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_DRUIDISM);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_EVOCATION);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_OCCULTISM);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_PYROMANCY);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_SHAMANISM);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_THAUMATURGY);
+        db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_WITCHCRAFT);
         onCreate(db);
     }
 }

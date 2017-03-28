@@ -16,6 +16,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.BindView;
 
+import static com.example.kraken.magicpaths.spell_database.SpellsTableContract.COL_SPELL_NAME;
+import static com.example.kraken.magicpaths.spell_database.SpellsTableContract.COL_SPELL_NUMBER;
+import static com.example.kraken.magicpaths.spell_database.SpellsTableContract.COL_SPELL_RANGE;
+import static com.example.kraken.magicpaths.spell_database.SpellsTableContract.COL_SPELL_VALUE;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,14 +36,18 @@ public class MainActivity extends AppCompatActivity {
 
         dbSpells = new SpellDBHelper(this);
 
+
+
         alchemyItem = new ContentValues();
-        alchemyItem.put("COL_SPELL_NUMBER", "A");
-        alchemyItem.put("COL_SPELL_NAME", "Alchemical Fire");
-        alchemyItem.put("COL_SPELL_VALUE", " ");
-        alchemyItem.put("COL_SPELL_RANGE", "18''");
+        alchemyItem.put("number", "A");
+        alchemyItem.put(COL_SPELL_NAME, "Alchemical Fire");
+        alchemyItem.put(COL_SPELL_VALUE, " ");
+        alchemyItem.put(COL_SPELL_RANGE, "18''");
         alchemyItem.put("COL_SPELL_TYPE", "Hex");
         alchemyItem.put("COL_SPELL_DURATION", "Lasts one Turn");
         alchemyItem.put("COL_SPELL_EFFECT", "The target gains Flammable against Close Combat Attacks and Spells.");
+
+        dbSpells.getWritableDatabase().insert("alchemy_spells", null, alchemyItem);
 
         dbSpells.getAllItemAlchemy();
     }

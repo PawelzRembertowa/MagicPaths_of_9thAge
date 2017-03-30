@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 
+import com.example.kraken.magicpaths.paths_of_magic.Alchemy;
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 import com.facebook.stetho.Stetho;
@@ -39,18 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        alchemyItem = new ContentValues();
-        alchemyItem.put(SpellsTableContract.COL_SPELL_NUMBER, "A");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_NAME, "Alchemical Fire");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_VALUE, " ");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_RANGE, "18''");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_TYPE, "Hex");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_DURATION, "Lasts one Turn");
-        alchemyItem.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains Flammable against Close Combat Attacks and Spells.");
+      Alchemy alchemy = new Alchemy();
+        alchemy.addAlchemyToDB();
 
-        dbSpells.getWritableDatabase().insert("alchemy_spells", null, alchemyItem);
-
-        dbSpells.getAllItemAlchemy();
     }
 
     @OnClick (R.id.button_start)

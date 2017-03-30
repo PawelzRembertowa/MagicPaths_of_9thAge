@@ -12,7 +12,7 @@ import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
 public class Divination extends AppCompatActivity {
 
-    private SpellDBHelper dbSpells;
+    public SpellDBHelper dbSpells;
 
     public ContentValues divinationItem1;
     public ContentValues divinationItem2;
@@ -103,6 +103,15 @@ public class Divination extends AppCompatActivity {
                 "<br><b>Magic Phase</b>: Cast Spells. " +
                 "<br><b>Shooting Phase</b>: Shoot.");
 
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem1);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem2);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem3);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem4);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem5);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem6);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem7);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem8);
+
         dbSpells.getAllItemDivination();
 
     }
@@ -111,8 +120,6 @@ public class Divination extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divination);
-
-
     }
 }
 

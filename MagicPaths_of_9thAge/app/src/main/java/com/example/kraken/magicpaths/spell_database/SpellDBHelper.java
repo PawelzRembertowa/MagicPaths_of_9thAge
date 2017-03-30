@@ -161,7 +161,7 @@ public class SpellDBHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getAllItemCosmology() {
-        Cursor cursorCosmology = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
+        Cursor cursorCosmology = getReadableDatabase().query(SpellsTableContract.TABLE_COSMOLOGY,
                 new String[]
                         {
                                 SpellsTableContract._ID,

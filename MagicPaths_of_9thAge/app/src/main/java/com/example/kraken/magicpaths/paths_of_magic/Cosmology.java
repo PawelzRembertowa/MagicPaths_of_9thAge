@@ -12,7 +12,7 @@ import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
 public class Cosmology extends AppCompatActivity {
 
-    private SpellDBHelper dbSpells;
+    public SpellDBHelper dbSpells;
 
     public ContentValues cosmologyItem1;
     public ContentValues cosmologyItem2;
@@ -122,6 +122,15 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "All models in the target unit <b>gain a Ward Save (5+).</b>");
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "Each model in the target unit <b>suffers a Strength 3 hit.</b>");
 
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem1);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem2);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem3);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem4);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem5);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem6);
+        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem7);
+
+
         dbSpells.getAllItemCosmology();
     }
 
@@ -130,9 +139,5 @@ public class Cosmology extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cosmology);
-
-
-
-
     }
 }

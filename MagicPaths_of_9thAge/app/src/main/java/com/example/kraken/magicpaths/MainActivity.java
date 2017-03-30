@@ -11,6 +11,7 @@ import android.widget.CursorAdapter;
 
 import com.example.kraken.magicpaths.paths_of_magic.Alchemy;
 import com.example.kraken.magicpaths.paths_of_magic.Cosmology;
+import com.example.kraken.magicpaths.paths_of_magic.Divination;
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 import com.facebook.stetho.Stetho;
@@ -28,7 +29,7 @@ import static com.example.kraken.magicpaths.spell_database.SpellsTableContract.C
 public class MainActivity extends AppCompatActivity {
 
 
-    private SpellDBHelper dbSpells;
+    public SpellDBHelper dbSpells;
 
 
     @Override
@@ -39,16 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
         dbSpells = new SpellDBHelper(this);
 
-
-
         Alchemy alchemy = new Alchemy();
         alchemy.addAlchemyToDB();
+
 
         Cosmology cosmology = new Cosmology();
         cosmology.addCosmologyToDB();
 
 
+        Divination divination = new Divination();
+        divination.addDivinationToDB();
 
+        dbSpells.close();
     }
 
     @OnClick (R.id.button_start)

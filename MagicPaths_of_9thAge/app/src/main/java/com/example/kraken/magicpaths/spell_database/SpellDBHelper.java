@@ -160,6 +160,43 @@ public class SpellDBHelper extends SQLiteOpenHelper {
         return cursorAlchemy;
     }
 
+    public Cursor getAllItemCosmology() {
+        Cursor cursorCosmology = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
+                new String[]
+                        {
+                                SpellsTableContract._ID,
+                                SpellsTableContract.COL_SPELL_NUMBER,
+                                SpellsTableContract.COL_SPELL_NAME,
+                                SpellsTableContract.COL_SPELL_VALUE,
+                                SpellsTableContract.COL_SPELL_RANGE,
+                                SpellsTableContract.COL_SPELL_ALL_TYPE,
+                                SpellsTableContract.COL_SPELL_COSMOS_TYPE,
+                                SpellsTableContract.COL_SPELL_CHAOS_TYPE,
+                                SpellsTableContract.COL_SPELL_DURATION,
+                                SpellsTableContract.COL_SPELL_COSMOS_DURATION,
+                                SpellsTableContract.COL_SPELL_CHAOS_DURATION,
+                                SpellsTableContract.COL_SPELL_COSMOS_EFFECT,
+                                SpellsTableContract.COL_SPELL_CHAOS_EFFECT
+                        }, null, null, null, null, null);
+        return cursorCosmology;
+    }
+
+
+    public Cursor getAllItemDivination() {
+        Cursor cursorDivination = getReadableDatabase().query(SpellsTableContract.TABLE_DIVINATION,
+                new String[]
+                        {
+                                SpellsTableContract._ID,
+                                SpellsTableContract.COL_SPELL_NUMBER,
+                                SpellsTableContract.COL_SPELL_NAME,
+                                SpellsTableContract.COL_SPELL_VALUE,
+                                SpellsTableContract.COL_SPELL_RANGE,
+                                SpellsTableContract.COL_SPELL_TYPE,
+                                SpellsTableContract.COL_SPELL_EFFECT
+                        }, null, null, null, null, null);
+        return cursorDivination;
+    }
+
 
 //Jesli zajda jakies zmiany w bazie to po to jest ta metoda by wykasowala stara i wstawila nowa
     @Override

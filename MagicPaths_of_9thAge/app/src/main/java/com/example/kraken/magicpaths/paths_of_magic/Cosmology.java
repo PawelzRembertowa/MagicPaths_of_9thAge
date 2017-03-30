@@ -122,7 +122,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "All models in the target unit <b>gain a Ward Save (5+).</b>");
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "Each model in the target unit <b>suffers a Strength 3 hit.</b>");
 
-        dbSpells.getAllItemAlchemy();
+        dbSpells.getAllItemCosmology();
     }
 
 

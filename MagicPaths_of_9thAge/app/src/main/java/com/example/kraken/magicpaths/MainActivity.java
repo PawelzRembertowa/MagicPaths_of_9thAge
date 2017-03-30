@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 
 import com.example.kraken.magicpaths.paths_of_magic.Alchemy;
+import com.example.kraken.magicpaths.paths_of_magic.Cosmology;
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 import com.facebook.stetho.Stetho;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private SpellDBHelper dbSpells;
-    private ContentValues alchemyItem;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-      Alchemy alchemy = new Alchemy();
+        Alchemy alchemy = new Alchemy();
         alchemy.addAlchemyToDB();
+
+        Cosmology cosmology = new Cosmology();
+        cosmology.addCosmologyToDB();
+
+
 
     }
 

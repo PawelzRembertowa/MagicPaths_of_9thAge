@@ -40,16 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         dbSpells = new SpellDBHelper(this);
 
-        Alchemy alchemy = new Alchemy();
-        alchemy.addAlchemyToDB();
-
-
-        Cosmology cosmology = new Cosmology();
-        cosmology.addCosmologyToDB();
-
-
-        Divination divination = new Divination();
-        divination.addDivinationToDB();
+        Alchemy.addAlchemyToDB(dbSpells);
+        Cosmology.addCosmologyToDB(dbSpells);
+        Divination.addDivinationToDB(dbSpells);
 
         dbSpells.close();
     }

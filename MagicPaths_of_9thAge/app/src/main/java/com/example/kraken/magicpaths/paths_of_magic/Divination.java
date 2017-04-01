@@ -1,6 +1,7 @@
 package com.example.kraken.magicpaths.paths_of_magic;
 
 import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
@@ -12,20 +13,15 @@ import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
 public class Divination extends AppCompatActivity {
 
-    public SpellDBHelper dbSpells;
+        @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_divination);
+    }
 
-    public ContentValues divinationItem1;
-    public ContentValues divinationItem2;
-    public ContentValues divinationItem3;
-    public ContentValues divinationItem4;
-    public ContentValues divinationItem5;
-    public ContentValues divinationItem6;
-    public ContentValues divinationItem7;
-    public ContentValues divinationItem8;
+    public static void addDivinationToDB(SpellDBHelper dbSpells) {
 
-    public void addDivinationToDB() {
-
-        divinationItem1 = new ContentValues();
+        ContentValues divinationItem1 = new ContentValues();
         divinationItem1.put(SpellsTableContract.COL_SPELL_NUMBER, "A");
         divinationItem1.put(SpellsTableContract.COL_SPELL_NAME, "Guiding Light");
         divinationItem1.put(SpellsTableContract.COL_SPELL_VALUE, " ");
@@ -35,7 +31,7 @@ public class Divination extends AppCompatActivity {
         divinationItem1.put(SpellsTableContract.COL_SPELL_EFFECT, "When the target takes a Leadership Test, roll an additional D6 and remove the highest D6 rolled. " +
                 "A unit cannot be affected by this spell more than once per Magic Phase.");
 
-        divinationItem2 = new ContentValues();
+        ContentValues divinationItem2 = new ContentValues();
         divinationItem2.put(SpellsTableContract.COL_SPELL_NUMBER, "0");
         divinationItem2.put(SpellsTableContract.COL_SPELL_NAME, "Scrying");
         divinationItem2.put(SpellsTableContract.COL_SPELL_VALUE, "<font color=\"red\">7+</font>\n<font color=\"blue\">[10+]</font>");
@@ -44,7 +40,7 @@ public class Divination extends AppCompatActivity {
         divinationItem2.put(SpellsTableContract.COL_SPELL_DURATION, "Lasts one Turn");
         divinationItem2.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains Distracting and Hard Target.");
 
-        divinationItem3 = new ContentValues();
+        ContentValues divinationItem3 = new ContentValues();
         divinationItem3.put(SpellsTableContract.COL_SPELL_NUMBER, "1");
         divinationItem3.put(SpellsTableContract.COL_SPELL_NAME, "Fate's Judgement");
         divinationItem3.put(SpellsTableContract.COL_SPELL_VALUE, "<font color=\"red\">7+</font>\n<font color=\"blue\">[10+]</font>");
@@ -53,7 +49,7 @@ public class Divination extends AppCompatActivity {
         divinationItem3.put(SpellsTableContract.COL_SPELL_DURATION, "Instant");
         divinationItem3.put(SpellsTableContract.COL_SPELL_EFFECT, "The target suffers <font color=\"red\">D3</font> <font color=\"blue\">[D6]</font> hits that wound automatically, with no Ward or Regeneration Saves allowed.");
 
-        divinationItem4 = new ContentValues();
+        ContentValues divinationItem4 = new ContentValues();
         divinationItem4.put(SpellsTableContract.COL_SPELL_NUMBER, "2");
         divinationItem4.put(SpellsTableContract.COL_SPELL_NAME, "Know Thy Enemy");
         divinationItem4.put(SpellsTableContract.COL_SPELL_VALUE, "<font color=\"red\">8+</font>\n<font color=\"blue\">[12+]</font>");
@@ -62,7 +58,7 @@ public class Divination extends AppCompatActivity {
         divinationItem4.put(SpellsTableContract.COL_SPELL_DURATION, "Last one Turn");
         divinationItem4.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains +2 Weapon Skill and +2 Initiative.");
 
-        divinationItem5 = new ContentValues();
+        ContentValues divinationItem5 = new ContentValues();
         divinationItem5.put(SpellsTableContract.COL_SPELL_NUMBER, "3");
         divinationItem5.put(SpellsTableContract.COL_SPELL_NAME, "The Stars Align");
         divinationItem5.put(SpellsTableContract.COL_SPELL_VALUE, "<font color=\"red\">9+</font>\n<font color=\"blue\">[12+]</font>");
@@ -71,7 +67,7 @@ public class Divination extends AppCompatActivity {
         divinationItem5.put(SpellsTableContract.COL_SPELL_DURATION, "Last one Turn");
         divinationItem5.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains Divine Attacks, and must reroll failed to-hit rolls with Close Combat <font color=\"red\">and Shooting</font> Attacks.");
 
-        divinationItem6 = new ContentValues();
+        ContentValues divinationItem6 = new ContentValues();
         divinationItem6.put(SpellsTableContract.COL_SPELL_NUMBER, "4");
         divinationItem6.put(SpellsTableContract.COL_SPELL_NAME, "Look to the West");
         divinationItem6.put(SpellsTableContract.COL_SPELL_VALUE, "9+");
@@ -80,7 +76,7 @@ public class Divination extends AppCompatActivity {
         divinationItem6.put(SpellsTableContract.COL_SPELL_DURATION, "Last one Turn");
         divinationItem6.put(SpellsTableContract.COL_SPELL_EFFECT, "The target gains Stubborn and Immune to Psychology.");
 
-        divinationItem7 = new ContentValues();
+        ContentValues divinationItem7 = new ContentValues();
         divinationItem7.put(SpellsTableContract.COL_SPELL_NUMBER, "5");
         divinationItem7.put(SpellsTableContract.COL_SPELL_NAME, "Unerring Strike");
         divinationItem7.put(SpellsTableContract.COL_SPELL_VALUE, "<font color=\"red\">9+</font>\n<font color=\"blue\">[13+]</font>");
@@ -89,7 +85,7 @@ public class Divination extends AppCompatActivity {
         divinationItem7.put(SpellsTableContract.COL_SPELL_DURATION, "Instant");
         divinationItem7.put(SpellsTableContract.COL_SPELL_EFFECT, "The target suffers <font color=\"red\">2D6</font> <font color=\"blue\">[3D6]</font> hits that wound on 4+, have Armour Piercing (2) and Divine Attacks.");
 
-        divinationItem8 = new ContentValues();
+        ContentValues divinationItem8 = new ContentValues();
         divinationItem8.put(SpellsTableContract.COL_SPELL_NUMBER, "6");
         divinationItem8.put(SpellsTableContract.COL_SPELL_NAME, "Portent of Doom");
         divinationItem8.put(SpellsTableContract.COL_SPELL_VALUE, "10+");
@@ -103,23 +99,22 @@ public class Divination extends AppCompatActivity {
                 "<br><b>Magic Phase</b>: Cast Spells. " +
                 "<br><b>Shooting Phase</b>: Shoot.");
 
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem1);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem2);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem3);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem4);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem5);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem6);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem7);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, divinationItem8);
+        SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
+        writableDatabase.beginTransaction();
 
-        dbSpells.getAllItemDivination();
+        writableDatabase.insert("divination_spells", null, divinationItem1);
+        writableDatabase.insert("divination_spells", null, divinationItem2);
+        writableDatabase.insert("divination_spells", null, divinationItem3);
+        writableDatabase.insert("divination_spells", null, divinationItem4);
+        writableDatabase.insert("divination_spells", null, divinationItem5);
+        writableDatabase.insert("divination_spells", null, divinationItem6);
+        writableDatabase.insert("divination_spells", null, divinationItem7);
+        writableDatabase.insert("divination_spells", null, divinationItem8);
+        writableDatabase.setTransactionSuccessful();
+        writableDatabase.endTransaction();
 
-    }
+//        dbSpells.getAllItemDivination();
 
-        @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_divination);
     }
 }
 

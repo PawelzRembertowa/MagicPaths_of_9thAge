@@ -16,6 +16,7 @@ public class Cosmology extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +126,7 @@ public class Cosmology extends AppCompatActivity {
 
         SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
         writableDatabase.beginTransaction();
+
         writableDatabase.insert("cosmology_spells", null, cosmologyItem1);
         writableDatabase.insert("cosmology_spells", null, cosmologyItem2);
         writableDatabase.insert("cosmology_spells", null, cosmologyItem3);
@@ -134,6 +136,11 @@ public class Cosmology extends AppCompatActivity {
         writableDatabase.insert("cosmology_spells", null, cosmologyItem7);
         writableDatabase.setTransactionSuccessful();
         writableDatabase.endTransaction();
+
         dbSpells.getAllItemAlchemy();
+
+
+//        dbSpells.getAllItemCosmology();
+
     }
 }

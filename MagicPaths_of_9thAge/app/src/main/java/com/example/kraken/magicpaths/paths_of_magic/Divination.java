@@ -15,6 +15,7 @@ public class Divination extends AppCompatActivity {
 
 
 
+
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +117,24 @@ public class Divination extends AppCompatActivity {
         writableDatabase.setTransactionSuccessful();
         writableDatabase.endTransaction();
         dbSpells.getAllItemAlchemy();
+
+
+        SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
+        writableDatabase.beginTransaction();
+        
+        writableDatabase.insert("divination_spells", null, divinationItem1);
+        writableDatabase.insert("divination_spells", null, divinationItem2);
+        writableDatabase.insert("divination_spells", null, divinationItem3);
+        writableDatabase.insert("divination_spells", null, divinationItem4);
+        writableDatabase.insert("divination_spells", null, divinationItem5);
+        writableDatabase.insert("divination_spells", null, divinationItem6);
+        writableDatabase.insert("divination_spells", null, divinationItem7);
+        writableDatabase.insert("divination_spells", null, divinationItem8);
+        writableDatabase.setTransactionSuccessful();
+        writableDatabase.endTransaction();
+
+//        dbSpells.getAllItemDivination();
+
 
     }
 }

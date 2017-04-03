@@ -1,7 +1,7 @@
 package com.example.kraken.magicpaths.paths_of_magic;
 
 import android.content.ContentValues;
-import android.database.Cursor;
+
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
@@ -26,8 +26,8 @@ public class Alchemy extends AppCompatActivity {
 
     }
 
-
     public static void addAlchemyToDB(SpellDBHelper dbSpells) {
+
 
         ContentValues alchemyItem1 = new ContentValues();
         alchemyItem1.put(SpellsTableContract.COL_SPELL_NUMBER, "A");
@@ -123,9 +123,7 @@ public class Alchemy extends AppCompatActivity {
         writableDatabase.endTransaction();
 
 
-
     }
-
 
 
     @SuppressWarnings("depreceation")
@@ -134,8 +132,6 @@ public class Alchemy extends AppCompatActivity {
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
                 android.R.layout.row,
                 );
+
     }
-
-
-
 }

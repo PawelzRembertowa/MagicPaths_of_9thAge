@@ -1,6 +1,7 @@
 package com.example.kraken.magicpaths.paths_of_magic;
 
 import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
@@ -12,19 +13,19 @@ import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
 public class Cosmology extends AppCompatActivity {
 
-    public SpellDBHelper dbSpells;
 
-    public ContentValues cosmologyItem1;
-    public ContentValues cosmologyItem2;
-    public ContentValues cosmologyItem3;
-    public ContentValues cosmologyItem4;
-    public ContentValues cosmologyItem5;
-    public ContentValues cosmologyItem6;
-    public ContentValues cosmologyItem7;
 
-    public void addCosmologyToDB() {
 
-        cosmologyItem1 = new ContentValues();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cosmology);
+    }
+
+
+    public static void addCosmologyToDB(SpellDBHelper dbSpells) {
+
+        ContentValues cosmologyItem1 = new ContentValues();
         cosmologyItem1.put(SpellsTableContract.COL_SPELL_NUMBER, "0");
         cosmologyItem1.put(SpellsTableContract.COL_SPELL_NAME, "Altered Sight");
         cosmologyItem1.put(SpellsTableContract.COL_SPELL_VALUE, "7+ <font color=#802000>{5+}</font>");
@@ -38,7 +39,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem1.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target gains <b>+1</b> Weapon Skill and <b>+1</b> Ballistic Skill.");
         cosmologyItem1.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers <b>-1</b> Weapon Skill, to a minimum of 1, and <b>-1</b> Ballistic Skill.");
 
-        cosmologyItem2 = new ContentValues();
+        ContentValues cosmologyItem2 = new ContentValues();
         cosmologyItem2.put(SpellsTableContract.COL_SPELL_NUMBER, "1");
         cosmologyItem2.put(SpellsTableContract.COL_SPELL_NAME, "Touch the Heart");
         cosmologyItem2.put(SpellsTableContract.COL_SPELL_VALUE, "7+ <font color=\"brown\">{5+}</brown>");
@@ -52,7 +53,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem2.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target <b>Recovers</b> 1 Wound.");
         cosmologyItem2.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers <b>1 hit that automatically wounds</b> with Armour Piercing (6).");
 
-        cosmologyItem3 = new ContentValues();
+        ContentValues cosmologyItem3 = new ContentValues();
         cosmologyItem3.put(SpellsTableContract.COL_SPELL_NUMBER, "2");
         cosmologyItem3.put(SpellsTableContract.COL_SPELL_NAME, "Mind Games");
         cosmologyItem3.put(SpellsTableContract.COL_SPELL_VALUE, "7+ <font color=\"brown\">{5+}</brown>");
@@ -66,7 +67,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem3.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target gains <b>+1</b> Leadership.");
         cosmologyItem3.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers <b>-1</b> Leadership.");
 
-        cosmologyItem4 = new ContentValues();
+        ContentValues cosmologyItem4 = new ContentValues();
         cosmologyItem4.put(SpellsTableContract.COL_SPELL_NUMBER, "3");
         cosmologyItem4.put(SpellsTableContract.COL_SPELL_NAME, "Truth of Time");
         cosmologyItem4.put(SpellsTableContract.COL_SPELL_VALUE, "9+ <font color=\"brown\">{7+}</brown>");
@@ -80,7 +81,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem4.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "When the target rolls a Charge Range, Flee Distance, Pursuit Distance or Overrun Distance, it rolls an additional D6.");
         cosmologyItem4.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "When the target rolls a Charge Range, Flee Distance, Pursuit Distance or Overrun Distance, it rolls one less D6 than normal.");
 
-        cosmologyItem5 = new ContentValues();
+        ContentValues cosmologyItem5 = new ContentValues();
         cosmologyItem5.put(SpellsTableContract.COL_SPELL_NUMBER, "4");
         cosmologyItem5.put(SpellsTableContract.COL_SPELL_NAME, "Ice and Fire");
         cosmologyItem5.put(SpellsTableContract.COL_SPELL_VALUE, "9+ <font color=\"brown\">{7+}</brown>");
@@ -94,7 +95,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem5.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target suffers 2D6 Strength 3 hits with <b>Flaming Attacks and Divine Attacks.</b>");
         cosmologyItem5.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers 2D6 Strength 3 hits with <b>Armour Piercing (3).</b>");
 
-        cosmologyItem6 = new ContentValues();
+        ContentValues cosmologyItem6 = new ContentValues();
         cosmologyItem6.put(SpellsTableContract.COL_SPELL_NUMBER, "5");
         cosmologyItem6.put(SpellsTableContract.COL_SPELL_NAME, "Perception of Strength");
         cosmologyItem6.put(SpellsTableContract.COL_SPELL_VALUE, "10+ <font color=\"brown\">{8+}</brown>");
@@ -108,7 +109,7 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem6.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target gains <b>+1</b> Strength.");
         cosmologyItem6.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers <b>-1</b> Strength.");
 
-        cosmologyItem7 = new ContentValues();
+        ContentValues cosmologyItem7 = new ContentValues();
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_NUMBER, "6");
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_NAME, "Unity in Divergence");
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_VALUE, "11+ <font color=\"brown\">{9+}</brown>");
@@ -122,22 +123,17 @@ public class Cosmology extends AppCompatActivity {
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "All models in the target unit <b>gain a Ward Save (5+).</b>");
         cosmologyItem7.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "Each model in the target unit <b>suffers a Strength 3 hit.</b>");
 
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem1);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem2);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem3);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem4);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem5);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem6);
-        dbSpells.getWritableDatabase().insert("cosmology_spells", null, cosmologyItem7);
-
-
-        dbSpells.getAllItemCosmology();
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cosmology);
+        SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
+        writableDatabase.beginTransaction();
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem1);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem2);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem3);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem4);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem5);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem6);
+        writableDatabase.insert("cosmology_spells", null, cosmologyItem7);
+        writableDatabase.setTransactionSuccessful();
+        writableDatabase.endTransaction();
+        dbSpells.getAllItemAlchemy();
     }
 }

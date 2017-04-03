@@ -214,5 +214,8 @@ public class SpellDBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + SpellsTableContract.TABLE_WITCHCRAFT);
         onCreate(db);
     }
+
+
+
 }
 //

@@ -116,12 +116,12 @@ public class Divination extends AppCompatActivity {
         writableDatabase.insert("cosmology_spells", null, divinationItem8);
         writableDatabase.setTransactionSuccessful();
         writableDatabase.endTransaction();
-        dbSpells.getAllItemAlchemy();
+       // dbSpells.getAllItemDivination();
 
 
-        SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
+        //SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
         writableDatabase.beginTransaction();
-        
+
         writableDatabase.insert("divination_spells", null, divinationItem1);
         writableDatabase.insert("divination_spells", null, divinationItem2);
         writableDatabase.insert("divination_spells", null, divinationItem3);

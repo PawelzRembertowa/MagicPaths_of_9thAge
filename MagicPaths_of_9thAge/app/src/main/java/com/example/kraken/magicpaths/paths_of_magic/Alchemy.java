@@ -2,17 +2,23 @@ package com.example.kraken.magicpaths.paths_of_magic;
 
 import android.content.ContentValues;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.kraken.magicpaths.R;
+import com.example.kraken.magicpaths.spell_database.SpellCursorAdapter;
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Alchemy extends AppCompatActivity {
@@ -23,6 +29,12 @@ public class Alchemy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alchemy);
 
+        SpellDBHelper alchemyHandler = new SpellDBHelper(this);
+        alchemyHandler.getAllItemAlchemy();
+
+        ListView lvItems = (ListView) findViewById(R.id.listViewAlchemyItems);
+        SpellCursorAdapter adapterAlchemy = new SpellCursorAdapter(this, cursorAlchemy);
+        lvItems.setAdapter(adapterAlchemy);
 
     }
 
@@ -125,13 +137,24 @@ public class Alchemy extends AppCompatActivity {
 
     }
 
+//        //SpellDBHelper handler = new SpellDBHelper(this);
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cursorAlchemy = db.rawQuery(SpellsTableContract.TABLE_ALCHEMY, null);
+//    }
 
-    @SuppressWarnings("depreceation")
-    private void getData() {
-
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                android.R.layout.row,
-                );
-
+    //Cursor cursorDivination = db.rawQuery("magicpaths.db", new String[]{SpellsTableContract.TABLE_DIVINATION});
+    public Cursor getAllItemAlchemy(SQLiteDatabase db) {
+        Cursor cursorAlchemy = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
+                new String[]
+                        {
+                                SpellsTableContract._ID,
+                                SpellsTableContract.COL_SPELL_NUMBER,
+                                SpellsTableContract.COL_SPELL_NAME,
+                                SpellsTableContract.COL_SPELL_VALUE,
+                                SpellsTableContract.COL_SPELL_RANGE,
+                                SpellsTableContract.COL_SPELL_TYPE,
+                                SpellsTableContract.COL_SPELL_EFFECT
+                        }, null, null, null, null, null);
+        return cursorAlchemy;
     }
 }

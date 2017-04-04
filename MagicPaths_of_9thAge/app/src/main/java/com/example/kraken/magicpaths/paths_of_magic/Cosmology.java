@@ -137,7 +137,7 @@ public class Cosmology extends AppCompatActivity {
         writableDatabase.setTransactionSuccessful();
         writableDatabase.endTransaction();
 
-        dbSpells.getAllItemAlchemy();
+        //dbSpells.getAllItemCosmology();
 
 
 //        dbSpells.getAllItemCosmology();

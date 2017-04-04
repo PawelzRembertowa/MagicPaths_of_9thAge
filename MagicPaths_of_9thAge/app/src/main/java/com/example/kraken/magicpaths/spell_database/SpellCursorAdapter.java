@@ -50,5 +50,7 @@ public class SpellCursorAdapter extends CursorAdapter {
         spellType.setText(typCzaru);
         spellDuration.setText(trwanieCzaru);
         spellEffect.setText(efektCzaru);
+
     }
+
 }

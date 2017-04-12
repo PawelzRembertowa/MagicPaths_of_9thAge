@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.kraken.magicpaths.R;
+import com.example.kraken.magicpaths.spell_database.Spell;
 import com.example.kraken.magicpaths.spell_database.SpellCursorAdapter;
 import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
@@ -143,18 +144,22 @@ public class Alchemy extends AppCompatActivity {
 //    }
 
     //Cursor cursorDivination = db.rawQuery("magicpaths.db", new String[]{SpellsTableContract.TABLE_DIVINATION});
-    public Cursor getAllItemAlchemy(SQLiteDatabase db) {
-        Cursor cursorAlchemy = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
-                new String[]
-                        {
-                                SpellsTableContract._ID,
-                                SpellsTableContract.COL_SPELL_NUMBER,
-                                SpellsTableContract.COL_SPELL_NAME,
-                                SpellsTableContract.COL_SPELL_VALUE,
-                                SpellsTableContract.COL_SPELL_RANGE,
-                                SpellsTableContract.COL_SPELL_TYPE,
-                                SpellsTableContract.COL_SPELL_EFFECT
-                        }, null, null, null, null, null);
-        return cursorAlchemy;
-    }
+
+//STARA METODA
+//    public Cursor getAllItemAlchemy(SQLiteDatabase db) {
+//        Cursor cursorAlchemy = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,
+//                new String[]
+//                        {
+//                                SpellsTableContract._ID,
+//                                SpellsTableContract.COL_SPELL_NUMBER,
+//                                SpellsTableContract.COL_SPELL_NAME,
+//                                SpellsTableContract.COL_SPELL_VALUE,
+//                                SpellsTableContract.COL_SPELL_RANGE,
+//                                SpellsTableContract.COL_SPELL_TYPE,
+//                                SpellsTableContract.COL_SPELL_EFFECT
+//                        }, null, null, null, null, null);
+//        return cursorAlchemy;
+//    }
+
+
 }

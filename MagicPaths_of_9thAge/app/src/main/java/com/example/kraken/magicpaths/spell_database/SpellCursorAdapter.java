@@ -2,6 +2,7 @@ package com.example.kraken.magicpaths.spell_database;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,11 @@ import com.example.kraken.magicpaths.R;
 
 public class SpellCursorAdapter extends CursorAdapter {
 
+    Context context;
+
     public SpellCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);
+        this.context=context;
     }
 
     @Override
@@ -52,5 +56,4 @@ public class SpellCursorAdapter extends CursorAdapter {
         spellEffect.setText(efektCzaru);
 
     }
-
 }

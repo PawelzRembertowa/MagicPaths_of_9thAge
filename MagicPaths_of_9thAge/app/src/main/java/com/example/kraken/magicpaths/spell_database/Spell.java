@@ -6,13 +6,16 @@ package com.example.kraken.magicpaths.spell_database;
 
 public class Spell {
 
-    private String spellNumber;
-    private String spellName;
-    private String spellValue;
-    private String spellRange;
-    private String spellType;
-    private String spellDuration;
-    private String spellEffect;
+    private int spellId;
+    public String spellNumber;
+    public String spellName;
+    public String spellValue;
+    public String spellRange;
+    public String spellType;
+    public String spellDuration;
+    public String spellEffect;
+
+    public int getSpellId() { return spellId;}
 
     public String getSpellNumber() {
         return spellNumber;
@@ -42,11 +45,40 @@ public class Spell {
         return spellEffect;
     }
 
+    public void setSpellNumber(String spellNumber) {
+        this.spellNumber = spellNumber;
+    }
+
+    public void setSpellName(String spellName) {
+        this.spellName = spellName;
+    }
+
+    public void setSpellValue(String spellValue) {
+        this.spellValue = spellValue;
+    }
+
+    public void setSpellRange(String spellRange) {
+        this.spellRange = spellRange;
+    }
+
+    public void setSpellType(String spellType) {
+        this.spellType = spellType;
+    }
+
+    public void setSpellDuration(String spellDuration) {
+        this.spellDuration = spellDuration;
+    }
+
+    public void setSpellEffect(String spellEffect) {
+        this.spellEffect = spellEffect;
+    }
+
     public Spell(String spellNumber, String spellName,
                  String spellValue, String spellRange,
                  String spellType, String spellDuration,
                  String spellEffect) {
 
+        this.spellId = getSpellId();
         this.spellNumber = spellNumber;
         this.spellName = spellName;
         this.spellValue = spellValue;

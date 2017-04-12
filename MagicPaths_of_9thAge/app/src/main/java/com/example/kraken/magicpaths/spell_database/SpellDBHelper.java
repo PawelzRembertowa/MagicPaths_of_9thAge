@@ -5,6 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Kraken on 2017-03-23.
  */
@@ -147,6 +150,28 @@ public class SpellDBHelper extends SQLiteOpenHelper {
 
     }
 
+//JAKIS PRZYKLAD Z  GRID LAYOUTU
+//    public List<Spell> getAllAlchemySpells(){
+//        List<Spell> spellAlchemyList = new ArrayList<Spell>();
+//        //Select All Query
+//        String selectQuery = "SELECT * FROM " + SpellsTableContract.TABLE_ALCHEMY;
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cursor = db.rawQuery(selectQuery, null);
+//
+//        //looping through all rows and adding to list
+//        if (cursor.moveToFirst()) {
+//            do {
+//                Spell spell = new Spell();
+//                spell.setSpellNumber(cursor.getString(1));
+//                spell.setSpellName(cursor.getString(2));
+//                spell.setSpellValue(cursor.getString(3));
+//                spell.setSpellRange(cursor.getString(4));
+//                spell.setSpellType(cursor.getString(5));
+//                spell.setSpellDuration(cursor.getString(6));
+//                spell.setSpellEffect(cursor.getString(7));
+//            }
+//        }
+//    }
 
 //    public Cursor getAllItemAlchemy(SQLiteDatabase db) {
 //        Cursor cursorAlchemy = getReadableDatabase().query(SpellsTableContract.TABLE_ALCHEMY,

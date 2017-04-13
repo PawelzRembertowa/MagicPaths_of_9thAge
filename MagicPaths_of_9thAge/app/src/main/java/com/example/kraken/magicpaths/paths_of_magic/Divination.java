@@ -105,17 +105,17 @@ public class Divination extends AppCompatActivity {
 
 
         SQLiteDatabase writableDatabase = dbSpells.getWritableDatabase();
-        writableDatabase.beginTransaction();
-        writableDatabase.insert("cosmology_spells", null, divinationItem1);
-        writableDatabase.insert("cosmology_spells", null, divinationItem2);
-        writableDatabase.insert("cosmology_spells", null, divinationItem3);
-        writableDatabase.insert("cosmology_spells", null, divinationItem4);
-        writableDatabase.insert("cosmology_spells", null, divinationItem5);
-        writableDatabase.insert("cosmology_spells", null, divinationItem6);
-        writableDatabase.insert("cosmology_spells", null, divinationItem7);
-        writableDatabase.insert("cosmology_spells", null, divinationItem8);
-        writableDatabase.setTransactionSuccessful();
-        writableDatabase.endTransaction();
+//        writableDatabase.beginTransaction();
+//        writableDatabase.insert("cosmology_spells", null, divinationItem1);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem2);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem3);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem4);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem5);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem6);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem7);
+//        writableDatabase.insert("cosmology_spells", null, divinationItem8);
+//        writableDatabase.setTransactionSuccessful();
+//        writableDatabase.endTransaction();
        // dbSpells.getAllItemDivination();
 
 

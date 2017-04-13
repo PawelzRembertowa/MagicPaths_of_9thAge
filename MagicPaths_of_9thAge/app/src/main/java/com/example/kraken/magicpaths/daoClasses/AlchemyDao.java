@@ -1,11 +1,16 @@
 package com.example.kraken.magicpaths.daoClasses;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.kraken.magicpaths.spell_database.Spell;
+import com.example.kraken.magicpaths.spell_database.SpellDBHelper;
 import com.example.kraken.magicpaths.spell_database.SpellsTableContract;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,43 +22,68 @@ public class AlchemyDao {
     public static final String ALCHEMY_SPELLS = "alchemy_spells";
 
     private SQLiteDatabase database;
+    private SpellDBHelper dbHelper;
 
-    public AlchemyDao (SQLiteDatabase database) {
-        this.database = database;
+    private String[] alchemyColumns = {SpellsTableContract.COL_SPELL_NUMBER,
+                        SpellsTableContract.COL_SPELL_NAME,
+                        SpellsTableContract.COL_SPELL_VALUE,
+                        SpellsTableContract.COL_SPELL_RANGE,
+                        SpellsTableContract.COL_SPELL_TYPE,
+                        SpellsTableContract.COL_SPELL_DURATION,
+                        SpellsTableContract.COL_SPELL_EFFECT};
+
+    public AlchemyDao (Context context) {
+        dbHelper = new SpellDBHelper(context);
     }
 
-    public void addSpell(List<Spell> spells){
-        database.beginTransaction();
+    public void open() throws SQLException {
+        database = dbHelper.getWritableDatabase();
+    }
 
-        for(Spell spell:spells){
-            ContentValues alchemyItem1 = new ContentValues();
+    public void close() {
+        dbHelper.close();
+    }
+    //NIE WIEM PO CO TO, ALE NA RAZIE MUSI BYC
+//    public Spell createSpell(String spell) {
+//        ContentValues values = new ContentValues();
+//        values.put(SpellsTableContract.TABLE_ALCHEMY, spell);
+//        int spellId = (int) database.insert(SpellsTableContract.TABLE_ALCHEMY, null, values);
+//        Cursor cursor = database.query(SpellsTableContract.TABLE_ALCHEMY, alchemyColumns,
+//                SpellsTableContract.COL_SPELL_NAME + " = " + spellId, null, null, null, null);
+//        cursor.moveToFirst();
+//        Spell newSpell = cursorToSpell(cursor);
+//        cursor.close();
+//        return newSpell;
+//    }
 
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_NUMBER, spell.getSpellNumber());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_NAME, spell.getSpellName());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_VALUE, spell.getSpellValue());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_RANGE, spell.getSpellRange());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_TYPE, spell.getSpellType());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_DURATION, spell.getSpellDuration());
-            alchemyItem1.put(SpellsTableContract.COL_SPELL_EFFECT, spell.getSpellEffect());
+    private Spell cursorToSpell(Cursor cursor) {
+        Spell spell = new Spell();
+        spell.setSpellNumber(cursor.getString(0));
+        spell.setSpellName(cursor.getString(1));
+        spell.setSpellValue(cursor.getString(2));
+        spell.setSpellRange(cursor.getString(3));
+        spell.setSpellType(cursor.getString(4));
+        spell.setSpellDuration(cursor.getString(5));
+        spell.setSpellEffect(cursor.getString(6));
+        return spell;
+    }
 
-            //        pozostaĹ‚e kolumny teĹĽ uzupeĹ‚niÄ‡ z klasy spell
-            //        cosmologyItem1.put(SpellsTableContract.COL_SPELL_ALL_TYPE, ??);
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_COSMOS_TYPE, );
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_CHAOS_TYPE, "<b>Hex</b>");
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_DURATION, "Lasts one Turn");
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_COSMOS_DURATION, " ");
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_CHAOS_DURATION, " ");
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_COSMOS_EFFECT, "The target gains <b>+1</b> Weapon Skill and <b>+1</b> Ballistic Skill.");
-//        cosmologyItem1.put(SpellsTableContract.COL_SPELL_CHAOS_EFFECT, "The target suffers <b>-1</b> Weapon Skill, to a minimum of 1, and <b>-1</b> Ballistic Skill.");
+    public List<Spell> getAllAlchemySpells() {
+        List<Spell> spells = new ArrayList<Spell>();
 
+        Cursor cursor = database.query(SpellsTableContract.TABLE_ALCHEMY,
+                alchemyColumns, null, null, null, null, null);
 
-
-            database.insert(ALCHEMY_SPELLS, null, alchemyItem1);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Spell spell = cursorToSpell(cursor);
+            spells.add(spell);
+            cursor.moveToNext();
         }
-
-
-        database.setTransactionSuccessful();
-        database.endTransaction();
-
+        cursor.close();
+        return spells;
     }
+
+
+
 }

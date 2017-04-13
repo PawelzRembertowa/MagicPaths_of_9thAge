@@ -73,10 +73,7 @@ public class Spell {
         this.spellEffect = spellEffect;
     }
 
-    public Spell(String spellNumber, String spellName,
-                 String spellValue, String spellRange,
-                 String spellType, String spellDuration,
-                 String spellEffect) {
+    public Spell() {
 
         this.spellId = getSpellId();
         this.spellNumber = spellNumber;
@@ -86,6 +83,11 @@ public class Spell {
         this.spellType = spellType;
         this.spellDuration = spellDuration;
         this.spellEffect = spellEffect;
+    }
+
+    @Override
+    public String toString() {
+        return spellName;
     }
 }
 
